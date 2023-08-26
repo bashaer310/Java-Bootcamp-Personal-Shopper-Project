@@ -93,7 +93,11 @@ public class OrderController {
 
     @GetMapping("getByCustomerUsername/{username}")
     public ResponseEntity getOrderByCustomerUsername(@PathVariable String username) {
-        return ResponseEntity.status(200).body(orderService.getOrderByUsername(username));
+        return ResponseEntity.status(200).body(orderService.getOrderByCustomerUsername(username));
+    }
+    @GetMapping("getByShopperUsername/{username}")
+    public ResponseEntity getOrderByShopperUsername(@PathVariable String username) {
+        return ResponseEntity.status(200).body(orderService.getOrderByPersonalShopperUsername(username));
     }
     @GetMapping("getByStatus/{status}")
     public ResponseEntity getOrderByStatus(@PathVariable String status) {

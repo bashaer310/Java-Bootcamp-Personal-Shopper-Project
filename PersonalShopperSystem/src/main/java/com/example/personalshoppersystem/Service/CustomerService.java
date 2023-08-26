@@ -69,7 +69,7 @@ public class CustomerService {
 
 
     public Customer getCustomerByUsername(String username){
-        Customer customer = customerRepository.getCustomerByUsername(username);
+        Customer customer = customerRepository.findCustomerByUsername(username);
 
         if (customer == null){
             throw new ApiException("Customer username not found");

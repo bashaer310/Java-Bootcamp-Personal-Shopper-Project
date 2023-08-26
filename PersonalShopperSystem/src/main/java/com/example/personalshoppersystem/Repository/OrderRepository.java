@@ -14,6 +14,7 @@ public interface OrderRepository extends JpaRepository<Orders, Integer> {
     Orders findOrderById(Integer id);
     List<Orders> findOrderByStatus(String status);
     List<Orders> findOrderByCustomer(Customer customer);
+    List<Orders> findOrderByPersonalShopper(PersonalShopper shopper);
     List<Orders> findOrdersByPersonalShopperAndCustomer(PersonalShopper shopper,Customer customer);
     List<Orders> findOrdersByCustomer_City(String city);
     @Query("select o from Orders o ORDER BY o.createdAt desc ")
